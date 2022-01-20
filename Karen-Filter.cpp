@@ -1,8 +1,4 @@
 //
-// Created by andrey on 16.01.2022.
-//
-
-//
 // Created by andrey on 15.01.2022.
 //
 #include <iostream>
@@ -26,40 +22,48 @@ const std::string& Karen::getFunName() const {
 void Karen::setFunName(const std::string& name){
     funname = name;
 }
-
+/*
 strings Karen::retur (std::string const &funstr){
-    if (funstr == "debug"){
-        return debug1;
-    }
-    else if (funstr == "info"){
-        return info1;
-    }
-    else if (funstr == "warning"){
-        return warning1;
-    }
-    else if (funstr == "error"){
-        return error1;
-    }
-    else {
-        return wrong1;
-    }
+if (funstr == "debug"){
+return debug1;
 }
+else if (funstr == "info"){
+return info1;
+}
+else if (funstr == "warning"){
+return warning1;
+}
+else if (funstr == "error"){
+return error1;
+}
+else {
+ return wrong1;
+}
+}
+*/
+
+std::hash<std::string> hasher;
 
 void Karen::complain(std::string level) {
-    level = funname;
-    switch (retur(level)) {
-        case debug1:
+    size_t hash = hasher(level);
+   const size_t dHash = hasher("debug");
+   const size_t iHash = hasher("info");
+     const size_t wHash = hasher("warning");
+   const size_t eHash = hasher("error");
+    switch (hash) {
+        case dHash:
             Karen::debug();
             break;
-        case info1:
+        case iHash:
             Karen::info();
             break;
-        case warning1:
+        case wHash:
             Karen::warning();
             break;
-        case error1:
+        case eHash:
             Karen::error();
             break;
     }
 }
+
 

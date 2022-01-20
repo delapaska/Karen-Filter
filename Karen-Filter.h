@@ -7,13 +7,15 @@
 #pragma once
 #include <iostream>
 #include <cstdlib>
+   /*
 enum strings {
-    debug1,
-    info1,
-    warning1,
-    error1,
-    wrong1
+    debug,
+    info,
+    warning,
+    error,
+    wrong
 };
+    */
 class Karen{
 private:
     std::string funname;
@@ -25,7 +27,8 @@ private:
 
 
 public:
-    strings retur (std::string const &funstr);
+
+  //  strings retur (std::string const &funstr);
     const std::string &getFunName() const;
     void setFunName(const std::string &name);
     void complain(std::string level);
